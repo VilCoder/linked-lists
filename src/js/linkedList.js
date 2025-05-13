@@ -18,7 +18,6 @@ export default class LinkedList {
 
     if (!this.head) {
       this.head = newNode;
-      this.length += 1;
     } else {
       let currentNode = this.head;
 
@@ -28,8 +27,9 @@ export default class LinkedList {
 
       currentNode.nextNode = newNode;
       this.tail = newNode;
-      this.length += 1;
     }
+    
+    this.length += 1;
   }
 
   // Adds a new node to the beginning of the list
@@ -61,6 +61,10 @@ export default class LinkedList {
       return null;
     }
 
+    if (index < 0) {
+      throw new RangeError("Index must be a positive number");
+    }
+
     if (index === 0) {
       return this.head.value;
     }
@@ -83,6 +87,10 @@ export default class LinkedList {
 
   // Inserts a new node at the given index
   insertAt(value, index) {
+    if (index < 0) {
+      throw new RangeError("Index must be a positive number");
+    }
+
     if (index === 0) {
       this.prepend(value);
       return;
@@ -112,6 +120,10 @@ export default class LinkedList {
   removeAt(index) {
     if (!this.head) {
       return null;
+    }
+
+    if (index < 0) {
+      throw new RangeError("Index must be a positive number");
     }
 
     if (index === 0) {
@@ -214,6 +226,6 @@ export default class LinkedList {
       currentNode = currentNode.nextNode;
     }
 
-    return `${nodes} null`;
+    return `${nodes}null`;
   }
 }
