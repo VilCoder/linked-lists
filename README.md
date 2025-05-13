@@ -1,2 +1,2 @@
-# Template
-This repository is a base template for future JavaScript projects. It includes the minimum configuration necessary to work in an organized and professional manner from the start.
+# Linked Lists
+This repository implements linked lists as a data structure, providing basic operations such as inserting, deleting, searching and traversing. It's ideal for understanding how dynamic lists work internally without relying on high-level native structures.
